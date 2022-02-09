@@ -7,7 +7,7 @@ data class EpisodeDisplayable(
     val name: String,
     val airDate: String,
     val code: String,
-    val characters: List<String>,
+    val characterUrls: List<String>,
     val url: String
 ) {
     constructor(episode: Episode) : this(
@@ -15,7 +15,7 @@ data class EpisodeDisplayable(
         name = episode.name,
         airDate = episode.airDate,
         code = episode.code,
-        characters = episode.characters,
+        characterUrls = episode.characterUrls,
         url = episode.url
     )
 }

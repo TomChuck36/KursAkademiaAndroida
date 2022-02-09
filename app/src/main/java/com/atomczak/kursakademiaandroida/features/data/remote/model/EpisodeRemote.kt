@@ -9,7 +9,7 @@ data class EpisodeRemote(
     @SerializedName("name") val name: String,
     @SerializedName("air_date") val airDate: String,
     @SerializedName("episode") val code: String,
-    @SerializedName("characters") val characters: List<String>,
+    @SerializedName("characters") val characterUrls: List<String>,
     @SerializedName("url") val url: String,
     @SerializedName("created") val created: String
 ) {
@@ -18,7 +18,7 @@ data class EpisodeRemote(
         name = name,
         airDate = airDate,
         code = code,
-        characters = characters,
+        characterUrls = characterUrls,
         url = url
     )
 }
