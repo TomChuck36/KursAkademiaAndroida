@@ -1,7 +1,7 @@
 package com.atomczak.kursakademiaandroida.core.di
 
 import androidx.room.Room
-import com.atomczak.kursakademiaandroida.db.AppDatabase
+import com.atomczak.kursakademiaandroida.core.db.AppDatabase
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 

@@ -1,4 +1,4 @@
-package com.atomczak.kursakademiaandroida.db
+package com.atomczak.kursakademiaandroida.core.db
 
 import androidx.room.RoomDatabase
 
