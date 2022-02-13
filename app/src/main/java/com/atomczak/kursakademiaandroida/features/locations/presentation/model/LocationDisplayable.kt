@@ -1,6 +1,6 @@
-package com.atomczak.kursakademiaandroida.features.episodes.presentation.model
+package com.atomczak.kursakademiaandroida.features.locations.presentation.model
 
-import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Location
+import com.atomczak.kursakademiaandroida.features.locations.domain.model.Location
 
 data class LocationDisplayable(
     val id: Int,

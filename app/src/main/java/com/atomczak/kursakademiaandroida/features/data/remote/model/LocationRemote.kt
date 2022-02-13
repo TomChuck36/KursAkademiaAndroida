@@ -1,6 +1,6 @@
 package com.atomczak.kursakademiaandroida.features.data.remote.model
 
-import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Location
+import com.atomczak.kursakademiaandroida.features.locations.domain.model.Location
 import com.google.gson.annotations.SerializedName
 
 

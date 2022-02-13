@@ -1,4 +1,4 @@
-package com.atomczak.kursakademiaandroida.features.episodes.domain.model
+package com.atomczak.kursakademiaandroida.features.characters.domain.model
 
 data class Character(
     val id: Int,

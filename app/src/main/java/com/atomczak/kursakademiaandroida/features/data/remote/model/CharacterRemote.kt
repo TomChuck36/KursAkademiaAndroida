@@ -1,6 +1,6 @@
 package com.atomczak.kursakademiaandroida.features.data.remote.model
 
-import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Character
+import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
 import com.google.gson.annotations.SerializedName
 
 
