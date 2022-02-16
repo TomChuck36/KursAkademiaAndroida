@@ -1,4 +1,4 @@
-package com.atomczak.kursakademiaandroida.features.episodes
+package com.atomczak.kursakademiaandroida.features.episodes.domain
 
 import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Episode
 

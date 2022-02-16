@@ -1,4 +1,4 @@
-package com.atomczak.kursakademiaandroida.features.locations
+package com.atomczak.kursakademiaandroida.features.locations.domain
 
 import android.location.Location
 

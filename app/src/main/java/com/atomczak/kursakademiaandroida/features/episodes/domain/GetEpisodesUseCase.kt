@@ -1,7 +1,6 @@
 package com.atomczak.kursakademiaandroida.features.episodes.domain
 
 import com.atomczak.kursakademiaandroida.core.base.UseCase
-import com.atomczak.kursakademiaandroida.features.episodes.EpisodeRepository
 import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Episode
 
 class GetEpisodesUseCase(

@@ -1,7 +1,6 @@
 package com.atomczak.kursakademiaandroida.features.characters.domain
 
 import com.atomczak.kursakademiaandroida.core.base.UseCase
-import com.atomczak.kursakademiaandroida.features.characters.CharacterRepository
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
 
 class GetCharactersUseCase(
