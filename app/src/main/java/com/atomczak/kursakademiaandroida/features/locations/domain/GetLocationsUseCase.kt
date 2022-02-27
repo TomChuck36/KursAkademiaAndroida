@@ -1,7 +1,7 @@
 package com.atomczak.kursakademiaandroida.features.locations.domain
 
-import android.location.Location
 import com.atomczak.kursakademiaandroida.core.base.UseCase
+import com.atomczak.kursakademiaandroida.features.locations.domain.model.Location
 
 class GetLocationsUseCase(
     private val locationRepository: LocationRepository

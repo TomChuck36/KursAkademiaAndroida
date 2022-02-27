@@ -1,16 +1,15 @@
 package com.atomczak.kursakademiaandroida.mock
 
-import com.atomczak.kursakademiaandroida.core.api.model.remote.CharacterLastLocationRemote
-import com.atomczak.kursakademiaandroida.core.api.model.remote.CharacterOriginLocationRemote
-import com.atomczak.kursakademiaandroida.core.api.model.remote.CharacterRemote
-import com.atomczak.kursakademiaandroida.core.api.model.remote.EpisodeRemote
+import com.atomczak.kursakademiaandroida.core.api.model.remote.*
 import com.atomczak.kursakademiaandroida.core.api.model.response.CharacterResponse
 import com.atomczak.kursakademiaandroida.core.api.model.response.EpisodesResponse
+import com.atomczak.kursakademiaandroida.core.api.model.response.LocationResponse
 import com.atomczak.kursakademiaandroida.core.api.model.response.ResponseInfo
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterCached
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterLastLocationCached
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterOriginLocationCached
 import com.atomczak.kursakademiaandroida.features.episodes.data.local.model.EpisodeCached
+import com.atomczak.kursakademiaandroida.features.locations.data.local.model.LocationCached
 import org.jetbrains.annotations.TestOnly
 
 @TestOnly
@@ -91,4 +90,35 @@ fun CharacterCached.Companion.mock() = CharacterCached(
     imageUrl = "image url",
     episodeUrls = emptyList(),
     url = "character url"
+)
+
+@TestOnly
+fun LocationRemote.Companion.mock() = LocationRemote(
+    id = 1,
+    name = "location name",
+    type = "location type",
+    dimension = "location dimension",
+    residentUrls = emptyList(),
+    url = "location url",
+    created = "example date"
+)
+
+@TestOnly
+fun LocationResponse.Companion.mock() = LocationResponse(
+    info = ResponseInfo.mock(),
+    results = listOf(
+        LocationRemote.mock(),
+        LocationRemote.mock(),
+        LocationRemote.mock()
+    )
+)
+
+@TestOnly
+fun LocationCached.Companion.mock() = LocationCached(
+    id = 1,
+    name = "location name",
+    type = "location type",
+    dimension = "location dimension",
+    residentUrls = emptyList(),
+    url = "location url"
 )
