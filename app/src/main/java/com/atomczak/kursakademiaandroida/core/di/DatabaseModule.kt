@@ -11,4 +11,8 @@ val databaseModule = module {
             androidApplication(), AppDatabase::class.java, "app_database"
         ).build()
     }
+
+    single {
+        get<AppDatabase>().episodeDao()
+    }
 }
