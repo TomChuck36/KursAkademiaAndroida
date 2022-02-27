@@ -67,7 +67,8 @@ ext {
     def roomVersion = "2.4.1"
 
     roomDependencies = [
-            roomRuntime: "androidx.room:room-runtime:" + roomVersion
+            roomRuntime: "androidx.room:room-runtime:" + roomVersion,
+            roomKtx    : "androidx.room:room-ktx:" + roomVersion
     ]
 
     roomKaptDependencies = [
