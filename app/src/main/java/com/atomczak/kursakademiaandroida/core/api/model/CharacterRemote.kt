@@ -1,8 +1,7 @@
-package com.atomczak.kursakademiaandroida.features.data.remote.model
+package com.atomczak.kursakademiaandroida.core.api.model
 
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
 import com.google.gson.annotations.SerializedName
-
 
 data class CharacterRemote(
     @SerializedName("id") val id: Int,
