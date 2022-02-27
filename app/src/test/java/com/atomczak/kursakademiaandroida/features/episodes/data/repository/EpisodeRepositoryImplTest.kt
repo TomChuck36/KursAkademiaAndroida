@@ -1,7 +1,7 @@
 package com.atomczak.kursakademiaandroida.features.episodes.data.repository
 
 import com.atomczak.kursakademiaandroida.core.api.RickAndMortyApi
-import com.atomczak.kursakademiaandroida.core.api.model.EpisodesResponse
+import com.atomczak.kursakademiaandroida.core.api.model.response.EpisodesResponse
 import com.atomczak.kursakademiaandroida.core.network.NetworkStateProvider
 import com.atomczak.kursakademiaandroida.features.episodes.data.local.EpisodeDao
 import com.atomczak.kursakademiaandroida.features.episodes.data.local.model.EpisodeCached

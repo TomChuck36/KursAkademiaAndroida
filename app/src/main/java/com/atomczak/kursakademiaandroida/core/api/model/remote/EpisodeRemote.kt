@@ -1,4 +1,4 @@
-package com.atomczak.kursakademiaandroida.core.api.model
+package com.atomczak.kursakademiaandroida.core.api.model.remote
 
 import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Episode
 import com.google.gson.annotations.SerializedName

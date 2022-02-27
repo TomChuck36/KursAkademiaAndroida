@@ -1,6 +1,8 @@
 package com.atomczak.kursakademiaandroida.features.characters.presentation.model
 
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
+import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterLastLocation
+import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterOriginLocation
 
 data class CharacterDisplayable(
     val id: Int,
@@ -9,32 +11,12 @@ data class CharacterDisplayable(
     val species: String,
     val type: String,
     val gender: String,
-    val originLocation: OriginLocation,
-    val lastLocation: LastLocation,
+    val originLocation: CharacterOriginLocationDisplayable,
+    val lastLocation: CharacterLastLocationDisplayable,
     val imageUrl: String,
     val episodeUrls: List<String>,
     val url: String,
 ) {
-    data class OriginLocation(
-        val name: String,
-        val url: String
-    ) {
-        constructor(origin: Character.OriginLocation) : this(
-            name = origin.name,
-            url = origin.url
-        )
-    }
-
-    data class LastLocation(
-        val name: String,
-        val url: String
-    ) {
-        constructor(location: Character.LastLocation) : this(
-            name = location.name,
-            url = location.url
-        )
-    }
-
     constructor(character: Character) : this(
         id = character.id,
         name = character.name,
@@ -42,10 +24,30 @@ data class CharacterDisplayable(
         species = character.species,
         type = character.type,
         gender = character.gender,
-        originLocation = OriginLocation(character.originLocation),
-        lastLocation = LastLocation(character.lastLocation),
+        originLocation = CharacterOriginLocationDisplayable(character.originLocation),
+        lastLocation = CharacterLastLocationDisplayable(character.lastLocation),
         imageUrl = character.imageUrl,
         episodeUrls = character.episodeUrls,
         url = character.url
+    )
+}
+
+data class CharacterOriginLocationDisplayable(
+    val name: String,
+    val url: String
+) {
+    constructor(origin: CharacterOriginLocation) : this(
+        name = origin.name,
+        url = origin.url
+    )
+}
+
+data class CharacterLastLocationDisplayable(
+    val name: String,
+    val url: String
+) {
+    constructor(location: CharacterLastLocation) : this(
+        name = location.name,
+        url = location.url
     )
 }

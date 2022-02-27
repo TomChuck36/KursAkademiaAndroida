@@ -1,4 +1,4 @@
-package com.atomczak.kursakademiaandroida.core.api.model
+package com.atomczak.kursakademiaandroida.core.api.model.response
 
 import com.google.gson.annotations.SerializedName
 

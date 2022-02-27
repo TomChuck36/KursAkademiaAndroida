@@ -1,8 +1,15 @@
 package com.atomczak.kursakademiaandroida.mock
 
-import com.atomczak.kursakademiaandroida.core.api.model.EpisodeRemote
-import com.atomczak.kursakademiaandroida.core.api.model.EpisodesResponse
-import com.atomczak.kursakademiaandroida.core.api.model.ResponseInfo
+import com.atomczak.kursakademiaandroida.core.api.model.remote.CharacterLastLocationRemote
+import com.atomczak.kursakademiaandroida.core.api.model.remote.CharacterOriginLocationRemote
+import com.atomczak.kursakademiaandroida.core.api.model.remote.CharacterRemote
+import com.atomczak.kursakademiaandroida.core.api.model.remote.EpisodeRemote
+import com.atomczak.kursakademiaandroida.core.api.model.response.CharacterResponse
+import com.atomczak.kursakademiaandroida.core.api.model.response.EpisodesResponse
+import com.atomczak.kursakademiaandroida.core.api.model.response.ResponseInfo
+import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterCached
+import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterLastLocationCached
+import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterOriginLocationCached
 import com.atomczak.kursakademiaandroida.features.episodes.data.local.model.EpisodeCached
 import org.jetbrains.annotations.TestOnly
 
@@ -43,4 +50,45 @@ fun EpisodeCached.Companion.mock() = EpisodeCached(
     code = "episode code",
     characterUrls = emptyList(),
     url = "episode url"
+)
+
+@TestOnly
+fun CharacterRemote.Companion.mock() = CharacterRemote(
+    id = 1,
+    name = "character name",
+    status = "character status",
+    species = "character species",
+    type = "character type",
+    gender = "character gender",
+    originLocation = CharacterOriginLocationRemote(name = "location name", url = "location url"),
+    lastLocation = CharacterLastLocationRemote(name = "location name", url = "location url"),
+    imageUrl = "image url",
+    episodeUrls = emptyList(),
+    url = "character url",
+    created = "example date"
+)
+
+@TestOnly
+fun CharacterResponse.Companion.mock() = CharacterResponse(
+    info = ResponseInfo.mock(),
+    results = listOf(
+        CharacterRemote.mock(),
+        CharacterRemote.mock(),
+        CharacterRemote.mock()
+    )
+)
+
+@TestOnly
+fun CharacterCached.Companion.mock() = CharacterCached(
+    id = 1,
+    name = "character name",
+    status = "character status",
+    species = "character species",
+    type = "character type",
+    gender = "character gender",
+    originLocation = CharacterOriginLocationCached(name = "location name", url = "location url"),
+    lastLocation = CharacterLastLocationCached(name = "location name", url = "location url"),
+    imageUrl = "image url",
+    episodeUrls = emptyList(),
+    url = "character url"
 )

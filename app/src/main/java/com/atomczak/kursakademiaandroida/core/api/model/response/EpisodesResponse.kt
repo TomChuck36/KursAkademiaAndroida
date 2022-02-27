@@ -1,5 +1,6 @@
-package com.atomczak.kursakademiaandroida.core.api.model
+package com.atomczak.kursakademiaandroida.core.api.model.response
 
+import com.atomczak.kursakademiaandroida.core.api.model.remote.EpisodeRemote
 import com.google.gson.annotations.SerializedName
 
 data class EpisodesResponse(
