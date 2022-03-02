@@ -1,6 +1,6 @@
 package com.atomczak.kursakademiaandroida.features.locations.domain
 
-import android.location.Location
+import com.atomczak.kursakademiaandroida.features.locations.domain.model.Location
 
 interface LocationRepository {
     suspend fun getLocations(): List<Location>

@@ -7,19 +7,19 @@ data class Character(
     val species: String,
     val type: String,
     val gender: String,
-    val originLocation: OriginLocation,
-    val lastLocation: LastLocation,
+    val originLocation: CharacterOriginLocation,
+    val lastLocation: CharacterLastLocation,
     val imageUrl: String,
     val episodeUrls: List<String>,
     val url: String,
-) {
-    data class OriginLocation(
-        val name: String,
-        val url: String
-    )
+)
 
-    data class LastLocation(
-        val name: String,
-        val url: String
-    )
-}
+data class CharacterOriginLocation(
+    val name: String,
+    val url: String
+)
+
+data class CharacterLastLocation(
+    val name: String,
+    val url: String
+)
