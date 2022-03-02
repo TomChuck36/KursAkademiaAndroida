@@ -1,19 +1,13 @@
 package com.atomczak.kursakademiaandroida.features.characters.data.local.model
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverters
-import com.atomczak.kursakademiaandroida.core.db.CharacterLastLocationConverter
-import com.atomczak.kursakademiaandroida.core.db.CharacterOriginLocationConverter
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterLastLocation
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterOriginLocation
 
 @Entity
-@TypeConverters(
-    CharacterLastLocationConverter::class,
-    CharacterOriginLocationConverter::class
-)
 data class CharacterCached(
     @PrimaryKey val id: Int,
     val name: String,
@@ -21,7 +15,9 @@ data class CharacterCached(
     val species: String,
     val type: String,
     val gender: String,
+    @Embedded(prefix = "CharacterOriginLocationCached")
     val originLocation: CharacterOriginLocationCached,
+    @Embedded(prefix = "CharacterLastLocationCached")
     val lastLocation: CharacterLastLocationCached,
     val imageUrl: String,
     val episodeUrls: List<String>,
