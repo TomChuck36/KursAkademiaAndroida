@@ -5,13 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
 import com.atomczak.kursakademiaandroida.core.base.BaseViewModel
+import com.atomczak.kursakademiaandroida.core.exception.ErrorMapper
 import com.atomczak.kursakademiaandroida.features.locations.domain.GetLocationsUseCase
 import com.atomczak.kursakademiaandroida.features.locations.domain.model.Location
 import com.atomczak.kursakademiaandroida.features.locations.presentation.model.LocationDisplayable
 
 class LocationViewModel(
-    private val getLocationsUseCase: GetLocationsUseCase
-) : BaseViewModel() {
+    private val getLocationsUseCase: GetLocationsUseCase,
+    errorMapper: ErrorMapper
+) : BaseViewModel(errorMapper) {
 
     private val _locations by lazy {
         MutableLiveData<List<Location>>().also {

@@ -18,7 +18,7 @@ val characterModule = module {
     }
 
     viewModel {
-        CharacterViewModel(get())
+        CharacterViewModel(get(), get())
     }
 
     factory {

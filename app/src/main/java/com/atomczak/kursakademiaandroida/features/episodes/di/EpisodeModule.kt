@@ -21,7 +21,7 @@ val episodeModule = module {
 
     //presentaion
     viewModel {
-        EpisodeViewModel(get())
+        EpisodeViewModel(get(), get())
     }
 
     factory {

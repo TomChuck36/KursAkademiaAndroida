@@ -18,7 +18,7 @@ val locationModule = module {
     }
 
     viewModel {
-        LocationViewModel(get())
+        LocationViewModel(get(), get())
     }
 
     factory {
