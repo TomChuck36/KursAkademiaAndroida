@@ -2,6 +2,7 @@ package com.atomczak.kursakademiaandroida.features.characters.data.repository
 
 import com.atomczak.kursakademiaandroida.core.api.RickAndMortyApi
 import com.atomczak.kursakademiaandroida.core.api.model.response.CharacterResponse
+import com.atomczak.kursakademiaandroida.core.exception.ErrorWrapper
 import com.atomczak.kursakademiaandroida.core.network.NetworkStateProvider
 import com.atomczak.kursakademiaandroida.features.characters.data.local.CharacterDao
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterCached
@@ -26,8 +27,9 @@ internal class CharacterRepositoryImplTest {
         val networkStateProvider = mockk<NetworkStateProvider> {
             every { isNetworkAvailable() } returns true
         }
+        val errorWrapper = mockk<ErrorWrapper>(relaxed = true)
         val repository: CharacterRepository =
-            CharacterRepositoryImpl(api, characterDao, networkStateProvider)
+            CharacterRepositoryImpl(api, characterDao, networkStateProvider, errorWrapper)
 
         //when
         runBlocking {
@@ -50,8 +52,9 @@ internal class CharacterRepositoryImplTest {
         val networkStateProvider = mockk<NetworkStateProvider> {
             every { isNetworkAvailable() } returns true
         }
+        val errorWrapper = mockk<ErrorWrapper>(relaxed = true)
         val repository: CharacterRepository =
-            CharacterRepositoryImpl(api, characterDao, networkStateProvider)
+            CharacterRepositoryImpl(api, characterDao, networkStateProvider, errorWrapper)
 
         //when
         runBlocking {
@@ -76,8 +79,9 @@ internal class CharacterRepositoryImplTest {
         val networkStateProvider = mockk<NetworkStateProvider> {
             every { isNetworkAvailable() } returns false
         }
+        val errorWrapper = mockk<ErrorWrapper>(relaxed = true)
         val repository: CharacterRepository =
-            CharacterRepositoryImpl(api, characterDao, networkStateProvider)
+            CharacterRepositoryImpl(api, characterDao, networkStateProvider, errorWrapper)
 
         //when
         runBlocking {

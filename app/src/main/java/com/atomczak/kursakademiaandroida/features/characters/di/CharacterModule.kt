@@ -10,7 +10,7 @@ import org.koin.dsl.module
 
 val characterModule = module {
     factory<CharacterRepository> {
-        CharacterRepositoryImpl(get(), get(), get())
+        CharacterRepositoryImpl(get(), get(), get(), get())
     }
 
     factory {
