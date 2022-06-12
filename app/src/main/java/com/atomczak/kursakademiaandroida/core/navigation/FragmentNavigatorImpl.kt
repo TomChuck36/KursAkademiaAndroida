@@ -1,7 +1,7 @@
 package com.atomczak.kursakademiaandroida.core.navigation
 
-import android.os.Bundle
 import androidx.annotation.IdRes
+import androidx.core.os.bundleOf
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
@@ -22,11 +22,16 @@ class FragmentNavigatorImpl(
         ?.findFragmentById(navHostFragmentRes)
         ?.findNavController()
 
-    override fun navigateTo(
+    override fun navigateTo(destinationID: Int, fragmentTransition: FragmentTransition?) {
+        navigateTo<Unit>(destinationID, null, fragmentTransition)
+    }
+
+    override fun <T> navigateTo(
         destinationID: Int,
-        bundle: Bundle?,
+        param: Pair<String, T>?,
         fragmentTransition: FragmentTransition?
     ) {
+        val bundle = param?.let { bundleOf(it) }
         val navOptions = fragmentTransition?.let {
             navOptions {
                 anim { enter = it.enterAnim }
