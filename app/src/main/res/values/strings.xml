@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">KursAkademiaAndroida</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="error_internal">Houston, we have a server-side problem. Try again in a few minutes.</string>
     <string name="error_bad_request">Validation error. Please check input parameters.</string>
@@ -21,4 +19,6 @@
     <string name="character_details.gender">Gender: </string>
     <string name="character_details.origin_location">Origin location: </string>
     <string name="character_details.last_location">Last location: </string>
+    <string name="location_details.type_s">Type: %s</string>
+    <string name="location_details.dimension_s">Dimension: %s</string>
 </resources>

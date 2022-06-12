@@ -1,5 +1,6 @@
 package com.atomczak.kursakademiaandroida.features.locations.di
 
+import com.atomczak.kursakademiaandroida.features.locations.all.presentation.LocationAdapter
 import com.atomczak.kursakademiaandroida.features.locations.all.presentation.LocationFragment
 import com.atomczak.kursakademiaandroida.features.locations.all.presentation.LocationViewModel
 import com.atomczak.kursakademiaandroida.features.locations.data.repository.LocationRepositoryImpl
@@ -20,4 +21,5 @@ val locationModule = module {
     viewModel { LocationDetailsViewModel() }
     factory { LocationFragment() }
     factory { LocationDetailsFragment() }
+    factory { LocationAdapter() }
 }
