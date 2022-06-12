@@ -5,6 +5,9 @@ import com.atomczak.kursakademiaandroida.core.api.model.response.CharacterRespon
 import com.atomczak.kursakademiaandroida.core.api.model.response.EpisodesResponse
 import com.atomczak.kursakademiaandroida.core.api.model.response.LocationResponse
 import com.atomczak.kursakademiaandroida.core.api.model.response.ResponseInfo
+import com.atomczak.kursakademiaandroida.features.characters.all.presentation.model.CharacterDisplayable
+import com.atomczak.kursakademiaandroida.features.characters.all.presentation.model.CharacterLastLocationDisplayable
+import com.atomczak.kursakademiaandroida.features.characters.all.presentation.model.CharacterOriginLocationDisplayable
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterCached
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterLastLocationCached
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterOriginLocationCached
@@ -128,6 +131,21 @@ fun Character.Companion.mock() = Character(
     gender = "character gender",
     originLocation = CharacterOriginLocation(name = "location name", url = "location url"),
     lastLocation = CharacterLastLocation(name = "location name", url = "location url"),
+    imageUrl = "image url",
+    episodeUrls = emptyList(),
+    url = "character url"
+)
+
+@TestOnly
+fun CharacterDisplayable.Companion.mock() = CharacterDisplayable(
+    id = 1,
+    name = "character name",
+    status = "character status",
+    species = "character species",
+    type = "character type",
+    gender = "character gender",
+    originLocation = CharacterOriginLocationDisplayable(name = "location name", url = "location url"),
+    lastLocation = CharacterLastLocationDisplayable(name = "location name", url = "location url"),
     imageUrl = "image url",
     episodeUrls = emptyList(),
     url = "character url"

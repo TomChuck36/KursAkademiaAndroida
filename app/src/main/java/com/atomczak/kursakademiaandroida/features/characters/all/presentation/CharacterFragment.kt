@@ -1,4 +1,4 @@
-package com.atomczak.kursakademiaandroida.features.characters.presentation
+package com.atomczak.kursakademiaandroida.features.characters.all.presentation
 
 import com.atomczak.kursakademiaandroida.R
 import com.atomczak.kursakademiaandroida.core.base.BaseFragment
