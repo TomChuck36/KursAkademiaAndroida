@@ -14,4 +14,11 @@
     <string name="title_episode_details">Episode Details</string>
     <string name="title_character_details">Character Details</string>
     <string name="title_location_details">Location Details</string>
+
+    <string name="character_details.status">Status: </string>
+    <string name="character_details.species">Species: </string>
+    <string name="character_details.type">Type: </string>
+    <string name="character_details.gender">Gender: </string>
+    <string name="character_details.origin_location">Origin location: </string>
+    <string name="character_details.last_location">Last location: </string>
 </resources>

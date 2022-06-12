@@ -1,5 +1,6 @@
 package com.atomczak.kursakademiaandroida.features.characters.di
 
+import com.atomczak.kursakademiaandroida.features.characters.all.presentation.CharacterAdapter
 import com.atomczak.kursakademiaandroida.features.characters.data.repository.CharacterRepositoryImpl
 import com.atomczak.kursakademiaandroida.features.characters.domain.CharacterRepository
 import com.atomczak.kursakademiaandroida.features.characters.domain.GetCharactersUseCase
@@ -20,4 +21,5 @@ val characterModule = module {
     viewModel { CharacterDetailsViewModel() }
     factory { CharacterFragment() }
     factory { CharacterDetailsFragment() }
+    factory { CharacterAdapter() }
 }
