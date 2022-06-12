@@ -2,6 +2,7 @@ package com.atomczak.kursakademiaandroida.core.di
 
 import android.content.Context
 import android.net.ConnectivityManager
+import androidx.navigation.navOptions
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,7 +33,16 @@ val appModule = module {
         FragmentNavigatorImpl(
             activityProvider = get(),
             navHostFragmentRes = R.id.nav_host_fragment_activity_main,
-            homeDestinationRes = R.id.characters_screen
+            homeDestinationRes = R.id.characters_screen,
+            defaultNavOptions = get()
         )
+    }
+    factory {
+        navOptions {
+            anim { enter = R.anim.nav_default_enter_anim }
+            anim { exit = R.anim.nav_default_exit_anim }
+            anim { popEnter = R.anim.nav_default_pop_enter_anim }
+            anim { popExit = R.anim.nav_default_pop_exit_anim }
+        }
     }
 }
