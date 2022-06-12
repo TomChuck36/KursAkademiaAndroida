@@ -21,4 +21,6 @@ data class EpisodeDisplayable(
         characterUrls = episode.characterUrls,
         url = episode.url
     )
+
+    companion object
 }

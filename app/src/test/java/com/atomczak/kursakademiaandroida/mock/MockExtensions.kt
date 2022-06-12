@@ -11,6 +11,7 @@ import com.atomczak.kursakademiaandroida.features.characters.data.local.model.Ch
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterLastLocation
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterOriginLocation
+import com.atomczak.kursakademiaandroida.features.episodes.all.presentation.model.EpisodeDisplayable
 import com.atomczak.kursakademiaandroida.features.episodes.data.local.model.EpisodeCached
 import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Episode
 import com.atomczak.kursakademiaandroida.features.locations.data.local.model.LocationCached
@@ -58,6 +59,16 @@ fun EpisodeCached.Companion.mock() = EpisodeCached(
 
 @TestOnly
 fun Episode.Companion.mock() = Episode(
+    id = 1,
+    name = "episode name",
+    airDate = "episode air date",
+    code = "episode code",
+    characterUrls = emptyList(),
+    url = "episode url"
+)
+
+@TestOnly
+fun EpisodeDisplayable.Companion.mock() = EpisodeDisplayable(
     id = 1,
     name = "episode name",
     airDate = "episode air date",
