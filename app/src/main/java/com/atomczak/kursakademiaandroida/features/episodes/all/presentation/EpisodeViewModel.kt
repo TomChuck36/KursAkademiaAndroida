@@ -43,7 +43,7 @@ class EpisodeViewModel(
         }
     }
 
-    fun onEpisodeClick() {
-        episodeNavigator.openEpisodeDetailsScreen()
+    fun onEpisodeClick(episode: EpisodeDisplayable) {
+        episodeNavigator.openEpisodeDetailsScreen(episode)
     }
 }
