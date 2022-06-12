@@ -4,6 +4,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.viewModelScope
 import com.atomczak.kursakademiaandroida.core.base.UiState
 import com.atomczak.kursakademiaandroida.core.exception.ErrorMapper
+import com.atomczak.kursakademiaandroida.features.episodes.all.presentation.EpisodeViewModel
 import com.atomczak.kursakademiaandroida.features.episodes.domain.GetEpisodesUseCase
 import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Episode
 import com.atomczak.kursakademiaandroida.mock.mock

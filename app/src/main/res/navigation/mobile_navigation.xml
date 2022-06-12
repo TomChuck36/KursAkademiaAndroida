@@ -3,23 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_characters">
+    app:startDestination="@+id/characters_screen">
 
     <fragment
-        android:id="@+id/navigation_characters"
+        android:id="@+id/characters_screen"
         android:name="com.atomczak.kursakademiaandroida.features.characters.presentation.CharacterFragment"
         android:label="@string/title_characters"
         tools:layout="@layout/fragment_character" />
 
     <fragment
-        android:id="@+id/navigation_episodes"
-        android:name="com.atomczak.kursakademiaandroida.features.episodes.presentation.EpisodeFragment"
+        android:id="@+id/episodes_screen"
+        android:name="com.atomczak.kursakademiaandroida.features.episodes.all.presentation.EpisodeFragment"
         android:label="@string/title_episodes"
-        tools:layout="@layout/fragment_episode" />
+        tools:layout="@layout/fragment_episode">
+        <action
+            android:id="@+id/action_navigate_from_episodes_to_episode_details_screen"
+            app:destination="@id/episode_details_screen"
+            app:popUpTo="@id/episodes_screen" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_locations"
+        android:id="@+id/locations_screen"
         android:name="com.atomczak.kursakademiaandroida.features.locations.presentation.LocationFragment"
         android:label="@string/title_locations"
         tools:layout="@layout/fragment_location" />
+
+    <fragment
+        android:id="@+id/episode_details_screen"
+        android:name="com.atomczak.kursakademiaandroida.features.episodes.details.presentation.EpisodeDetailsFragment"
+        android:label="@string/title_episode_details"
+        tools:layout="@layout/fragment_episode_details" />
 </navigation>
