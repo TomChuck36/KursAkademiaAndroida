@@ -17,6 +17,7 @@ import com.atomczak.kursakademiaandroida.features.characters.domain.model.Charac
 import com.atomczak.kursakademiaandroida.features.episodes.all.presentation.model.EpisodeDisplayable
 import com.atomczak.kursakademiaandroida.features.episodes.data.local.model.EpisodeCached
 import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Episode
+import com.atomczak.kursakademiaandroida.features.locations.all.presentation.model.LocationDisplayable
 import com.atomczak.kursakademiaandroida.features.locations.data.local.model.LocationCached
 import com.atomczak.kursakademiaandroida.features.locations.domain.model.Location
 import org.jetbrains.annotations.TestOnly
@@ -184,6 +185,16 @@ fun LocationCached.Companion.mock() = LocationCached(
 
 @TestOnly
 fun Location.Companion.mock() = Location(
+    id = 1,
+    name = "location name",
+    type = "location type",
+    dimension = "location dimension",
+    residentUrls = emptyList(),
+    url = "location date",
+)
+
+@TestOnly
+fun LocationDisplayable.Companion.mock() = LocationDisplayable(
     id = 1,
     name = "location name",
     type = "location type",
