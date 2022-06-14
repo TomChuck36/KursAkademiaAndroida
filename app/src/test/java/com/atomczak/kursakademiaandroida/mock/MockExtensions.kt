@@ -8,8 +8,13 @@ import com.atomczak.kursakademiaandroida.core.api.model.response.ResponseInfo
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterCached
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterLastLocationCached
 import com.atomczak.kursakademiaandroida.features.characters.data.local.model.CharacterOriginLocationCached
+import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
+import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterLastLocation
+import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterOriginLocation
 import com.atomczak.kursakademiaandroida.features.episodes.data.local.model.EpisodeCached
+import com.atomczak.kursakademiaandroida.features.episodes.domain.model.Episode
 import com.atomczak.kursakademiaandroida.features.locations.data.local.model.LocationCached
+import com.atomczak.kursakademiaandroida.features.locations.domain.model.Location
 import org.jetbrains.annotations.TestOnly
 
 @TestOnly
@@ -43,6 +48,16 @@ fun EpisodesResponse.Companion.mock() = EpisodesResponse(
 
 @TestOnly
 fun EpisodeCached.Companion.mock() = EpisodeCached(
+    id = 1,
+    name = "episode name",
+    airDate = "episode air date",
+    code = "episode code",
+    characterUrls = emptyList(),
+    url = "episode url"
+)
+
+@TestOnly
+fun Episode.Companion.mock() = Episode(
     id = 1,
     name = "episode name",
     airDate = "episode air date",
@@ -93,6 +108,21 @@ fun CharacterCached.Companion.mock() = CharacterCached(
 )
 
 @TestOnly
+fun Character.Companion.mock() = Character(
+    id = 1,
+    name = "character name",
+    status = "character status",
+    species = "character species",
+    type = "character type",
+    gender = "character gender",
+    originLocation = CharacterOriginLocation(name = "location name", url = "location url"),
+    lastLocation = CharacterLastLocation(name = "location name", url = "location url"),
+    imageUrl = "image url",
+    episodeUrls = emptyList(),
+    url = "character url"
+)
+
+@TestOnly
 fun LocationRemote.Companion.mock() = LocationRemote(
     id = 1,
     name = "location name",
@@ -121,4 +151,14 @@ fun LocationCached.Companion.mock() = LocationCached(
     dimension = "location dimension",
     residentUrls = emptyList(),
     url = "location url"
+)
+
+@TestOnly
+fun Location.Companion.mock() = Location(
+    id = 1,
+    name = "location name",
+    type = "location type",
+    dimension = "location dimension",
+    residentUrls = emptyList(),
+    url = "location date",
 )

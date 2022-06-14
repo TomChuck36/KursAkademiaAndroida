@@ -12,7 +12,9 @@ data class Character(
     val imageUrl: String,
     val episodeUrls: List<String>,
     val url: String,
-)
+) {
+    companion object
+}
 
 data class CharacterOriginLocation(
     val name: String,

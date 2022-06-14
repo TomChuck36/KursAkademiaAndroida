@@ -7,4 +7,6 @@ data class Location(
     val dimension: String,
     val residentUrls: List<String>,
     val url: String
-)
+) {
+    companion object
+}
