@@ -11,7 +11,7 @@ import org.koin.dsl.module
 val episodeModule = module {
     //data
     factory<EpisodeRepository> {
-        EpisodeRepositoryImpl(get(), get(), get())
+        EpisodeRepositoryImpl(get(), get(), get(), get())
     }
 
     //domain
@@ -21,7 +21,7 @@ val episodeModule = module {
 
     //presentaion
     viewModel {
-        EpisodeViewModel(get())
+        EpisodeViewModel(get(), get())
     }
 
     factory {

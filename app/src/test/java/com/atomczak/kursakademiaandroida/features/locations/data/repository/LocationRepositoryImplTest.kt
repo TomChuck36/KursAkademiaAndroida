@@ -2,6 +2,7 @@ package com.atomczak.kursakademiaandroida.features.locations.data.repository
 
 import com.atomczak.kursakademiaandroida.core.api.RickAndMortyApi
 import com.atomczak.kursakademiaandroida.core.api.model.response.LocationResponse
+import com.atomczak.kursakademiaandroida.core.exception.ErrorWrapper
 import com.atomczak.kursakademiaandroida.core.network.NetworkStateProvider
 import com.atomczak.kursakademiaandroida.features.locations.data.local.LocationDao
 import com.atomczak.kursakademiaandroida.features.locations.data.local.model.LocationCached
@@ -26,8 +27,9 @@ internal class LocationRepositoryImplTest {
         val networkStateProvider = mockk<NetworkStateProvider> {
             every { isNetworkAvailable() } returns true
         }
+        val errorWrapper = mockk<ErrorWrapper>(relaxed = true)
         val repository: LocationRepository =
-            LocationRepositoryImpl(api, locationDao, networkStateProvider)
+            LocationRepositoryImpl(api, locationDao, networkStateProvider, errorWrapper)
 
         //when
         runBlocking {
@@ -50,8 +52,9 @@ internal class LocationRepositoryImplTest {
         val networkStateProvider = mockk<NetworkStateProvider> {
             every { isNetworkAvailable() } returns true
         }
+        val errorWrapper = mockk<ErrorWrapper>(relaxed = true)
         val repository: LocationRepository =
-            LocationRepositoryImpl(api, locationDao, networkStateProvider)
+            LocationRepositoryImpl(api, locationDao, networkStateProvider, errorWrapper)
 
         //when
         runBlocking {
@@ -74,8 +77,9 @@ internal class LocationRepositoryImplTest {
         val networkStateProvider = mockk<NetworkStateProvider> {
             every { isNetworkAvailable() } returns false
         }
+        val errorWrapper = mockk<ErrorWrapper>(relaxed = true)
         val repository: LocationRepository =
-            LocationRepositoryImpl(api, locationDao, networkStateProvider)
+            LocationRepositoryImpl(api, locationDao, networkStateProvider, errorWrapper)
 
         //when
         runBlocking {

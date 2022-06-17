@@ -10,7 +10,7 @@ import org.koin.dsl.module
 
 val locationModule = module {
     factory<LocationRepository> {
-        LocationRepositoryImpl(get(), get(), get())
+        LocationRepositoryImpl(get(), get(), get(), get())
     }
 
     factory {
@@ -18,7 +18,7 @@ val locationModule = module {
     }
 
     viewModel {
-        LocationViewModel(get())
+        LocationViewModel(get(), get())
     }
 
     factory {

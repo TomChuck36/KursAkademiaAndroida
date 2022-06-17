@@ -5,6 +5,10 @@ import android.net.ConnectivityManager
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.atomczak.kursakademiaandroida.core.exception.ErrorMapper
+import com.atomczak.kursakademiaandroida.core.exception.ErrorMapperImpl
+import com.atomczak.kursakademiaandroida.core.exception.ErrorWrapper
+import com.atomczak.kursakademiaandroida.core.exception.ErrorWrapperImpl
 import com.atomczak.kursakademiaandroida.core.network.NetworkStateProvider
 import com.atomczak.kursakademiaandroida.core.network.NetworkStateProviderImpl
 import org.koin.android.ext.koin.androidContext
@@ -29,5 +33,13 @@ val appModule = module {
 
     factory<NetworkStateProvider> {
         NetworkStateProviderImpl(get())
+    }
+
+    factory<ErrorWrapper> {
+        ErrorWrapperImpl()
+    }
+
+    factory<ErrorMapper> {
+        ErrorMapperImpl(androidContext())
     }
 }

@@ -10,7 +10,7 @@ import org.koin.dsl.module
 
 val characterModule = module {
     factory<CharacterRepository> {
-        CharacterRepositoryImpl(get(), get(), get())
+        CharacterRepositoryImpl(get(), get(), get(), get())
     }
 
     factory {
@@ -18,7 +18,7 @@ val characterModule = module {
     }
 
     viewModel {
-        CharacterViewModel(get())
+        CharacterViewModel(get(), get())
     }
 
     factory {
