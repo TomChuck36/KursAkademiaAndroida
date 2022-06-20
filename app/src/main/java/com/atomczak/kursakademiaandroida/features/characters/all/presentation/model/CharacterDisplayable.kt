@@ -1,9 +1,12 @@
-package com.atomczak.kursakademiaandroida.features.characters.presentation.model
+package com.atomczak.kursakademiaandroida.features.characters.all.presentation.model
 
+import android.os.Parcelable
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.Character
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterLastLocation
 import com.atomczak.kursakademiaandroida.features.characters.domain.model.CharacterOriginLocation
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class CharacterDisplayable(
     val id: Int,
     val name: String,
@@ -16,7 +19,7 @@ data class CharacterDisplayable(
     val imageUrl: String,
     val episodeUrls: List<String>,
     val url: String,
-) {
+) : Parcelable {
     constructor(character: Character) : this(
         id = character.id,
         name = character.name,
@@ -30,22 +33,26 @@ data class CharacterDisplayable(
         episodeUrls = character.episodeUrls,
         url = character.url
     )
+
+    companion object
 }
 
+@Parcelize
 data class CharacterOriginLocationDisplayable(
     val name: String,
     val url: String
-) {
+) : Parcelable {
     constructor(origin: CharacterOriginLocation) : this(
         name = origin.name,
         url = origin.url
     )
 }
 
+@Parcelize
 data class CharacterLastLocationDisplayable(
     val name: String,
     val url: String
-) {
+) : Parcelable {
     constructor(location: CharacterLastLocation) : this(
         name = location.name,
         url = location.url
